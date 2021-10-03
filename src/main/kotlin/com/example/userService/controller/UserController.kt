@@ -10,12 +10,11 @@ class UserController(
     private val usersService: UsersService
 ) {
     @GetMapping("/{login}")
-    fun getById(@PathVariable login : String){
+    fun getById(@PathVariable login: String) = usersService.getByLogin(login)
 
-    }
 
     @PostMapping
-    fun create(@RequestBody user : UserDto) {
+    fun create(@RequestBody user: UserDto) {
 
     }
 }
