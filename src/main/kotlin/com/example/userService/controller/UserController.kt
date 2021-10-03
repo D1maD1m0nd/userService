@@ -14,7 +14,5 @@ class UserController(
 
 
     @PostMapping
-    fun create(@RequestBody user: UserDto) {
-
-    }
+    fun create(@RequestBody user: UserDto) = usersService.create(user)
 }

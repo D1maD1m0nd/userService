@@ -15,9 +15,6 @@ class UsersServiceImpl(
             ?.toDto() ?: throw RuntimeException()
 
 
-    override fun create(user: UserDto) {
-        usersRepository.create(user.login, user.password, user.email)
-    }
-
+    override fun create(user: UserDto): Int = usersRepository.create(user.login, user.password, user.email)
 
 }
